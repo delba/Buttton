@@ -24,60 +24,7 @@
 
 import Foundation
 
-private extension String {
-    static var backgroundColorsKey = "bòton_backgroundColors"
-    static var cornerRadiusesKey = "bòton_cornerRadiuses"
-    static var borderWidthsKey = "bòton_borderWidths"
-    static var borderColorsKey = "bòton_borderColors"
-}
-
-extension UIButton: AssociatedObject, Swizzler {}
-
 extension UIButton {
-    private var backgroundColors: [UInt: UIColor] {
-        get { return associatedObject(&.backgroundColorsKey) as? [UInt: UIColor] ?? [:] }
-        set { associatedObject(&.backgroundColorsKey, object: newValue) }
-    }
-    
-    private var cornerRadiuses: [UInt: CGFloat] {
-        get { return associatedObject(&.cornerRadiusesKey) as? [UInt: CGFloat] ?? [:] }
-        set { associatedObject(&.cornerRadiusesKey, object: newValue) }
-    }
-    
-    private var borderWidths: [UInt: CGFloat] {
-        get { return associatedObject(&.borderWidthsKey) as? [UInt: CGFloat] ?? [:] }
-        set { associatedObject(&.borderWidthsKey, object: newValue) }
-    }
-    
-    private var borderColors: [UInt: UIColor] {
-        get { return associatedObject(&.borderColorsKey) as? [UInt: UIColor] ?? [:] }
-        set { associatedObject(&.borderColorsKey, object: newValue) }
-    }
-    
-    public override class func initialize() {
-        swizzle("layoutSubviews", replacement: "bòton_layoutSubviews")
-    }
-    
-    public func bòton_layoutSubviews() {
-        self.bòton_layoutSubviews()
-        
-        if let color = backgroundColorForState(state) {
-            self.backgroundColor = color
-        }
-        
-        if let radius = cornerRadiusForState(state) {
-            self.layer.cornerRadius = radius
-        }
-        
-        if let width = borderWidthForState(state) {
-            self.layer.borderWidth = width
-        }
-        
-        if let color = borderColorForState(state) {
-            self.layer.borderColor = color.CGColor
-        }
-    }
-    
     /**
      Returns the background color used for a state.
      
@@ -161,4 +108,59 @@ extension UIButton {
     public func setBorderColor(color: UIColor?, forState state: UIControlState) {
         borderColors[state.rawValue] = color
     }
+}
+
+extension UIButton: Swizzler {
+    public override class func initialize() {
+        swizzle("layoutSubviews", replacement: "bòton_layoutSubviews")
+    }
+    
+    public func bòton_layoutSubviews() {
+        self.bòton_layoutSubviews()
+        
+        if let color = backgroundColorForState(state) {
+            self.backgroundColor = color
+        }
+        
+        if let radius = cornerRadiusForState(state) {
+            self.layer.cornerRadius = radius
+        }
+        
+        if let width = borderWidthForState(state) {
+            self.layer.borderWidth = width
+        }
+        
+        if let color = borderColorForState(state) {
+            self.layer.borderColor = color.CGColor
+        }
+    }
+}
+
+extension UIButton: AssociatedObject {
+    private var backgroundColors: [UInt: UIColor] {
+        get { return associatedObject(&.backgroundColorsKey) as? [UInt: UIColor] ?? [:] }
+        set { associatedObject(&.backgroundColorsKey, object: newValue) }
+    }
+    
+    private var cornerRadiuses: [UInt: CGFloat] {
+        get { return associatedObject(&.cornerRadiusesKey) as? [UInt: CGFloat] ?? [:] }
+        set { associatedObject(&.cornerRadiusesKey, object: newValue) }
+    }
+    
+    private var borderWidths: [UInt: CGFloat] {
+        get { return associatedObject(&.borderWidthsKey) as? [UInt: CGFloat] ?? [:] }
+        set { associatedObject(&.borderWidthsKey, object: newValue) }
+    }
+    
+    private var borderColors: [UInt: UIColor] {
+        get { return associatedObject(&.borderColorsKey) as? [UInt: UIColor] ?? [:] }
+        set { associatedObject(&.borderColorsKey, object: newValue) }
+    }
+}
+
+private extension String {
+    static var backgroundColorsKey = "bòton_backgroundColors"
+    static var cornerRadiusesKey = "bòton_cornerRadiuses"
+    static var borderWidthsKey = "bòton_borderWidths"
+    static var borderColorsKey = "bòton_borderColors"
 }
