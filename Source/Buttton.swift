@@ -116,22 +116,22 @@ extension UIButton: Swizzler {
     }
     
     public func buttton_layoutSubviews() {
-        self.buttton_layoutSubviews()
+        buttton_layoutSubviews()
         
         if let color = backgroundColorForState(state) {
-            self.backgroundColor = color
+            backgroundColor = color
         }
         
         if let radius = cornerRadiusForState(state) {
-            self.layer.cornerRadius = radius
+            layer.cornerRadius = radius
         }
         
         if let width = borderWidthForState(state) {
-            self.layer.borderWidth = width
+            layer.borderWidth = width
         }
         
         if let color = borderColorForState(state) {
-            self.layer.borderColor = color.CGColor
+            layer.borderColor = color.CGColor
         }
     }
 }
