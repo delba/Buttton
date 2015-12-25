@@ -138,29 +138,29 @@ extension UIButton: Swizzler {
 
 extension UIButton: AssociatedObject {
     private var backgroundColors: [UInt: UIColor] {
-        get { return associatedObject(&.backgroundColorsKey) as? [UInt: UIColor] ?? [:] }
-        set { associatedObject(&.backgroundColorsKey, object: newValue) }
+        get { return associatedObject(&.backgroundColors) as? [UInt: UIColor] ?? [:] }
+        set { associatedObject(&.backgroundColors, object: newValue) }
     }
     
     private var cornerRadiuses: [UInt: CGFloat] {
-        get { return associatedObject(&.cornerRadiusesKey) as? [UInt: CGFloat] ?? [:] }
-        set { associatedObject(&.cornerRadiusesKey, object: newValue) }
+        get { return associatedObject(&.cornerRadiuses) as? [UInt: CGFloat] ?? [:] }
+        set { associatedObject(&.cornerRadiuses, object: newValue) }
     }
     
     private var borderWidths: [UInt: CGFloat] {
-        get { return associatedObject(&.borderWidthsKey) as? [UInt: CGFloat] ?? [:] }
-        set { associatedObject(&.borderWidthsKey, object: newValue) }
+        get { return associatedObject(&.borderWidths) as? [UInt: CGFloat] ?? [:] }
+        set { associatedObject(&.borderWidths, object: newValue) }
     }
     
     private var borderColors: [UInt: UIColor] {
-        get { return associatedObject(&.borderColorsKey) as? [UInt: UIColor] ?? [:] }
-        set { associatedObject(&.borderColorsKey, object: newValue) }
+        get { return associatedObject(&.borderColors) as? [UInt: UIColor] ?? [:] }
+        set { associatedObject(&.borderColors, object: newValue) }
     }
 }
 
 private extension String {
-    static var backgroundColorsKey = "buttton_backgroundColors"
-    static var cornerRadiusesKey   = "buttton_cornerRadiuses"
-    static var borderWidthsKey     = "buttton_borderWidths"
-    static var borderColorsKey     = "buttton_borderColors"
+    static var backgroundColors = "buttton_backgroundColors"
+    static var cornerRadiuses   = "buttton_cornerRadiuses"
+    static var borderWidths     = "buttton_borderWidths"
+    static var borderColors     = "buttton_borderColors"
 }
