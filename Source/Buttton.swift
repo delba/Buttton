@@ -112,11 +112,11 @@ extension UIButton {
 
 extension UIButton: Swizzler {
     public override class func initialize() {
-        swizzle("layoutSubviews", replacement: "bòton_layoutSubviews")
+        swizzle("layoutSubviews", replacement: "buttton_layoutSubviews")
     }
     
-    public func bòton_layoutSubviews() {
-        self.bòton_layoutSubviews()
+    public func buttton_layoutSubviews() {
+        self.buttton_layoutSubviews()
         
         if let color = backgroundColorForState(state) {
             self.backgroundColor = color
@@ -159,8 +159,8 @@ extension UIButton: AssociatedObject {
 }
 
 private extension String {
-    static var backgroundColorsKey = "bòton_backgroundColors"
-    static var cornerRadiusesKey = "bòton_cornerRadiuses"
-    static var borderWidthsKey = "bòton_borderWidths"
-    static var borderColorsKey = "bòton_borderColors"
+    static var backgroundColorsKey = "buttton_backgroundColors"
+    static var cornerRadiusesKey   = "buttton_cornerRadiuses"
+    static var borderWidthsKey     = "buttton_borderWidths"
+    static var borderColorsKey     = "buttton_borderColors"
 }
