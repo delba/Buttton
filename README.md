@@ -40,7 +40,7 @@ To integrate Sorry into your Xcode project using Carthage, specify it in your `C
 github "delba/Buttton"
 ```
 
-### Cocoapods
+### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
