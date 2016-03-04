@@ -34,7 +34,7 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate Sorry into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate Buttton into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
 github "delba/Buttton"
@@ -50,7 +50,7 @@ You can install it with the following command:
 $ gem install cocoapods
 ```
 
-To integrate Sorry into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate Buttton into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 use_frameworks!
