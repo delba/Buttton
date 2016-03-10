@@ -5,6 +5,8 @@
   <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
 </p>
 
+The missing `(set)backgroundColor|cornerRadius|borderWidth|borderColor(_:forState)` methods.
+
 ## Usage
 
 ```swift
@@ -13,12 +15,12 @@ import Buttton
 let button = UIButton()
 button.clipsToBounds = true
 
-button.setBackgroundColor(UIColor.clearColor(), forState: .Normal)
+button.setBackgroundColor(.clearColor(), forState: .Normal)
 button.setBorderRadius(44, forState: .Normal)
 button.setBorderWidth(1, forState: .Normal)
 
-button.setBorderColor(UIColor.greenColor(), forState: .Normal)
-button.setBorderColor(UIColor.redColor(), forState: .Highlighted)
+button.setBorderColor(.greenColor(), forState: .Normal)
+button.setBorderColor(.redColor(), forState: .Highlighted)
 ```
 
 ## Installation
