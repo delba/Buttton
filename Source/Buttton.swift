@@ -25,6 +25,20 @@
 import Foundation
 
 extension UIButton {
+    
+    // MARK: - Background colors
+    
+    /**
+     Sets the background colors to use for the specified states.
+     
+     - parameter colors: A dictionary with a UIControlState state as the key and an optional color as the value
+     */
+    public func setBackgroundColors(colors: [UIControlState: UIColor?]) {
+        for (state, color) in colors {
+            setBackgroundColor(color, forState: state)
+        }
+    }
+    
     /**
      Returns the background color used for a state.
      
@@ -44,6 +58,19 @@ extension UIButton {
      */
     public func setBackgroundColor(color: UIColor?, forState state: UIControlState) {
         backgroundColors[state.rawValue] = color
+    }
+    
+    // MARK: - Corner radiuses
+    
+    /**
+     Sets the corner radiuses to use for the specified states.
+     
+     - parameter colors: A dictionary with a UIControlState state as the key and a corner radius as the value
+     */
+    public func setCornerRadiuses(cornerRadiuses: [UIControlState: CGFloat]) {
+        for (state, radius) in cornerRadiuses {
+            setCornerRadius(radius, forState: state)
+        }
     }
     
     /**
@@ -67,6 +94,19 @@ extension UIButton {
         cornerRadiuses[state.rawValue] = radius
     }
     
+    // MARK: - Border widths
+    
+    /**
+     Sets the border widths to use for the specified states.
+     
+     - parameter borderWidths: A dictionary with a UIControlState state as the key and a border width as the value
+     */
+    public func setBorderWidths(borderWidths: [UIControlState: CGFloat]) {
+        for (state, width) in borderWidths {
+            setBorderWidth(width, forState: state)
+        }
+    }
+    
     /**
      Returns the border width used for a state.
      
@@ -86,6 +126,19 @@ extension UIButton {
      */
     public func setBorderWidth(width: CGFloat?, forState state: UIControlState) {
         borderWidths[state.rawValue] = width
+    }
+    
+    // MARK: - Border colors
+    
+    /**
+     Sets the border colors to use for the specified states.
+     
+     - parameter borderColors: A dictionary with a UIControlState state as the key and an optional color as the value
+     */
+    public func setBorderColors(borderColors: [UIControlState: UIColor?]) {
+        for (state, color) in borderColors {
+            setBorderColor(color, forState: state)
+        }
     }
     
     /**
