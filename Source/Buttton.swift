@@ -124,7 +124,7 @@ extension UIButton {
      - parameter width: The border width to use for the specified state.
      - parameter state: The state that uses the specified border width.
      */
-    public func setBorderWidth(width: CGFloat?, forState state: UIControlState) {
+    public func setBorderWidth(width: CGFloat, forState state: UIControlState) {
         borderWidths[state.rawValue] = width
     }
     
