@@ -26,6 +26,84 @@ import Foundation
 
 extension UIButton {
     
+    // MARK: - Titles
+    
+    /**
+    Sets the titles to use for the specified states.
+    
+    - parameter titles: A dictionary with a UIControlState as the key and an optional title as the value.
+    */
+    public func setTitles(titles: [UIControlState: String?]) {
+        for (state, title) in titles {
+            setTitle(title, forState: state)
+        }
+    }
+    
+    // MARK: - Attributed titles
+    
+    /**
+    Sets the attribute titles to use for the specified states.
+    
+    - parameter attributedTitles: A dictionary with a UIControlState as the key and an optional attributed title as the value.
+    */
+    public func setAttributedTitles(attributedTitles: [UIControlState: NSAttributedString?]) {
+        for (state, title) in attributedTitles {
+            setAttributedTitle(title, forState: state)
+        }
+    }
+    
+    // MARK: - Title colors
+    
+    /**
+    Sets the title colors to use for the specified states.
+    
+    - parameter titleColors: A dictionary with a UIControlState as the key and an optional title color as the value.
+    */
+    public func setTitleColors(titleColors: [UIControlState: UIColor?]) {
+        for (state, color) in titleColors {
+            setTitleColor(color, forState: state)
+        }
+    }
+    
+    // MARK: - Title shadow colors
+    
+    /**
+    Sets the title shadow colors to use for the specified states.
+    
+    - parameter titleShadowColors: A dictionary with a UIControlState as the key and an optional title shadow color as the value.
+    */
+    public func setTitleShadowColors(titleShadowColors: [UIControlState: UIColor?]) {
+        for (state, color) in titleShadowColors {
+            setTitleShadowColor(color, forState: state)
+        }
+    }
+    
+    // MARK: - Background images
+    
+    /**
+    Sets the background images to use for the specified states.
+    
+    - parameter backgroundImages: A dictionary with a UIControlState as the key and an optional background image as the value.
+    */
+    public func setBackgroundImages(backgroundImages: [UIControlState: UIImage?]) {
+        for (state, image) in backgroundImages {
+            setBackgroundImage(image, forState: state)
+        }
+    }
+    
+    // MARK: - Images
+    
+    /**
+    Sets the images to use for the specified states.
+    
+    - parameter images: A dictionary with a UIControlState as the key and an optional image as the value.
+    */
+    public func setImages(images: [UIControlState: UIImage?]) {
+        for (state, image) in images {
+            setImage(image, forState: state)
+        }
+    }
+    
     // MARK: - Background colors
     
     /**
