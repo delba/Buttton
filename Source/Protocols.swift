@@ -24,6 +24,12 @@
 
 import Foundation
 
+// MARK: - Hashable
+
+extension UIControlState: Hashable {
+   public var hashValue: Int { return Int(rawValue) } 
+}
+
 // MARK: - AssociatedObject
 
 internal protocol AssociatedObject {}

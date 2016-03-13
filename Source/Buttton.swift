@@ -25,6 +25,98 @@
 import Foundation
 
 extension UIButton {
+    
+    // MARK: - Titles
+    
+    /**
+    Sets the titles to use for the specified states.
+    
+    - parameter titles: A dictionary with a UIControlState as the key and an optional title as the value.
+    */
+    public func setTitles(titles: [UIControlState: String?]) {
+        for (state, title) in titles {
+            setTitle(title, forState: state)
+        }
+    }
+    
+    // MARK: - Attributed titles
+    
+    /**
+    Sets the attribute titles to use for the specified states.
+    
+    - parameter titles: A dictionary with a UIControlState as the key and an optional attributed title as the value.
+    */
+    public func setAttributedTitles(titles: [UIControlState: NSAttributedString?]) {
+        for (state, title) in titles {
+            setAttributedTitle(title, forState: state)
+        }
+    }
+    
+    // MARK: - Title colors
+    
+    /**
+    Sets the title colors to use for the specified states.
+    
+    - parameter colors: A dictionary with a UIControlState as the key and an optional title color as the value.
+    */
+    public func setTitleColors(colors: [UIControlState: UIColor?]) {
+        for (state, color) in colors {
+            setTitleColor(color, forState: state)
+        }
+    }
+    
+    // MARK: - Title shadow colors
+    
+    /**
+    Sets the title shadow colors to use for the specified states.
+    
+    - parameter colors: A dictionary with a UIControlState as the key and an optional title shadow color as the value.
+    */
+    public func setTitleShadowColors(colors: [UIControlState: UIColor?]) {
+        for (state, color) in colors {
+            setTitleShadowColor(color, forState: state)
+        }
+    }
+    
+    // MARK: - Background images
+    
+    /**
+    Sets the background images to use for the specified states.
+    
+    - parameter images: A dictionary with a UIControlState as the key and an optional background image as the value.
+    */
+    public func setBackgroundImages(images: [UIControlState: UIImage?]) {
+        for (state, image) in images {
+            setBackgroundImage(image, forState: state)
+        }
+    }
+    
+    // MARK: - Images
+    
+    /**
+    Sets the images to use for the specified states.
+    
+    - parameter images: A dictionary with a UIControlState as the key and an optional image as the value.
+    */
+    public func setImages(images: [UIControlState: UIImage?]) {
+        for (state, image) in images {
+            setImage(image, forState: state)
+        }
+    }
+    
+    // MARK: - Background colors
+    
+    /**
+     Sets the background colors to use for the specified states.
+     
+     - parameter colors: A dictionary with a UIControlState state as the key and an optional color as the value.
+     */
+    public func setBackgroundColors(colors: [UIControlState: UIColor?]) {
+        for (state, color) in colors {
+            setBackgroundColor(color, forState: state)
+        }
+    }
+    
     /**
      Returns the background color used for a state.
      
@@ -44,6 +136,19 @@ extension UIButton {
      */
     public func setBackgroundColor(color: UIColor?, forState state: UIControlState) {
         backgroundColors[state.rawValue] = color
+    }
+    
+    // MARK: - Corner radiuses
+    
+    /**
+     Sets the corner radiuses to use for the specified states.
+     
+     - parameter radiuses: A dictionary with a UIControlState state as the key and a corner radius as the value.
+     */
+    public func setCornerRadiuses(radiuses: [UIControlState: CGFloat]) {
+        for (state, radius) in radiuses {
+            setCornerRadius(radius, forState: state)
+        }
     }
     
     /**
@@ -67,6 +172,19 @@ extension UIButton {
         cornerRadiuses[state.rawValue] = radius
     }
     
+    // MARK: - Border widths
+    
+    /**
+     Sets the border widths to use for the specified states.
+     
+     - parameter widths: A dictionary with a UIControlState state as the key and a border width as the value.
+     */
+    public func setBorderWidths(widths: [UIControlState: CGFloat]) {
+        for (state, width) in widths {
+            setBorderWidth(width, forState: state)
+        }
+    }
+    
     /**
      Returns the border width used for a state.
      
@@ -84,8 +202,21 @@ extension UIButton {
      - parameter width: The border width to use for the specified state.
      - parameter state: The state that uses the specified border width.
      */
-    public func setBorderWidth(width: CGFloat?, forState state: UIControlState) {
+    public func setBorderWidth(width: CGFloat, forState state: UIControlState) {
         borderWidths[state.rawValue] = width
+    }
+    
+    // MARK: - Border colors
+    
+    /**
+     Sets the border colors to use for the specified states.
+     
+     - parameter colors: A dictionary with a UIControlState state as the key and an optional color as the value.
+     */
+    public func setBorderColors(colors: [UIControlState: UIColor?]) {
+        for (state, color) in colors {
+            setBorderColor(color, forState: state)
+        }
     }
     
     /**
@@ -112,7 +243,7 @@ extension UIButton {
 
 extension UIButton: Swizzler {
     public override class func initialize() {
-        swizzle("layoutSubviews", replacement: "buttton_layoutSubviews")
+        swizzle(Selector("layoutSubviews"), replacement: Selector("buttton_layoutSubviews"))
     }
     
     public func buttton_layoutSubviews() {

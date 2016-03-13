@@ -54,6 +54,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D58ECF51C959A5600B16607 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D5C5BD71C13969B00204DEB /* Buttton.h */,
+				6D5C5BD91C13969B00204DEB /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D58ECF61C959A6900B16607 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D5C5BE51C13969B00204DEB /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		6D5C5BCA1C13969B00204DEB = {
 			isa = PBXGroup;
 			children = (
@@ -75,9 +92,8 @@
 		6D5C5BD61C13969B00204DEB /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				6D5C5BD71C13969B00204DEB /* Buttton.h */,
+				6D58ECF51C959A5600B16607 /* Supporting Files */,
 				6D5C5BEE1C1396BA00204DEB /* Buttton.swift */,
-				6D5C5BD91C13969B00204DEB /* Info.plist */,
 				6D5C5BF01C13972E00204DEB /* Protocols.swift */,
 			);
 			path = Source;
@@ -86,8 +102,8 @@
 		6D5C5BE21C13969B00204DEB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				6D58ECF61C959A6900B16607 /* Supporting Files */,
 				6D5C5BE31C13969B00204DEB /* ButttonTests.swift */,
-				6D5C5BE51C13969B00204DEB /* Info.plist */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -261,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -303,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -321,7 +337,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Source/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -340,7 +356,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Source/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -353,7 +369,7 @@
 		6D5C5BEC1C13969B00204DEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.delba.ButttonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -363,7 +379,7 @@
 		6D5C5BED1C13969B00204DEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.delba.ButttonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
