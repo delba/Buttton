@@ -35,12 +35,25 @@ extension UIControlState: Hashable {
 internal protocol AssociatedObject {}
 
 extension AssociatedObject where Self: AnyObject {
-    func associatedObject(inout key: String) -> AnyObject! {
-        return objc_getAssociatedObject(self, &key)
+    func associatedObject(inout key: String) -> AnyObject {
+        var object: AnyObject!
+
+        synchronized {
+            object = objc_getAssociatedObject(self, &key)
+        }
+
+        return object
     }
     
     func associatedObject(inout key: String, object: AnyObject) {
-        objc_setAssociatedObject(self, &key, object, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        synchronized {
+            objc_setAssociatedObject(self, &key, object, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    private func synchronized(block: () -> Void) {
+        objc_sync_enter(self); defer { objc_sync_exit(self) }
+        block()
     }
 }
 
