@@ -1,5 +1,5 @@
 //
-//  Protocols.swift
+//  Utilities.swift
 //
 // Copyright (c) 2015 Damien (http://delba.io)
 //
