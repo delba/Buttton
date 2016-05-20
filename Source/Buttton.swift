@@ -290,8 +290,8 @@ extension UIButton: AssociatedObject {
 }
 
 private extension String {
-    static var backgroundColors = "buttton_backgroundColors"
-    static var cornerRadiuses   = "buttton_cornerRadiuses"
-    static var borderWidths     = "buttton_borderWidths"
-    static var borderColors     = "buttton_borderColors"
+    static var backgroundColors = "io.delba.buttton.backgroundColors"
+    static var cornerRadiuses   = "io.delba.buttton.cornerRadiuses"
+    static var borderWidths     = "io.delba.buttton.borderWidths"
+    static var borderColors     = "io.delba.buttton.borderColors"
 }
