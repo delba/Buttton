@@ -243,7 +243,7 @@ extension UIButton {
 
 extension UIButton: Swizzler {
     public override class func initialize() {
-        swizzle(Selector("layoutSubviews"), replacement: Selector("buttton_layoutSubviews"))
+        swizzle(#selector(UIView.layoutSubviews), replacement: #selector(UIButton.buttton_layoutSubviews))
     }
     
     public func buttton_layoutSubviews() {
