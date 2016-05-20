@@ -1,31 +1,51 @@
 <h1 align="center">Buttton</h1>
+
 <p align="center">
   <a href="https://travis-ci.org/delba/Buttton"><img alt="Travis Status" src="https://img.shields.io/travis/delba/Buttton.svg"/></a>
   <a href="https://img.shields.io/cocoapods/v/Buttton.svg"><img alt="CocoaPods compatible" src="https://img.shields.io/cocoapods/v/Buttton.svg"/></a>
   <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
 </p>
 
-The missing `(set)backgroundColor|cornerRadius|borderWidth|borderColor(_:forState)` methods.
-
-## Usage
+**Buttton** lets you set `UIButton` properties for multiple states at once&hellip;
 
 ```swift
-import Buttton
-
-let button = UIButton()
-button.clipsToBounds = true
-
-button.setBackgroundColor(.clearColor(), forState: .Normal)
-button.setBorderRadius(44, forState: .Normal)
-button.setBorderWidth(1, forState: .Normal)
-
-button.setBorderColor(.greenColor(), forState: .Normal)
-button.setBorderColor(.redColor(), forState: .Highlighted)
+button.setTitles([
+    .Normal: "Normal",
+    .Highlighted: "Highlighted"
+])
 ```
+
+&hellip;and provides some missing properties:
+
+```swift
+button.setBorderColor([
+    .Normal: .greenColor(),
+    .Highlighted: .redColor()
+])
+```
+
+**List of missing properties:**
+
+- background color:
+    - `backgroundColorForState(_:)`
+    - `setBackgroundColor(_:forState:)`
+    - `setBackgroundColors(_:)`
+- corner radius:
+    - `cornerRadiusForState(_:)`
+    - `setCornerRadius(_:forState:)`
+    - `setCornerRadiuses(_:)`
+- border width:
+    - `borderWidthForState(_:)`
+    - `setBorderWidth(_:forState:)`
+    - `setBorderWidths(_:)`
+- border color:
+    - `borderColorForState(_:)`
+    - `setBorderColor(_:forState:)`
+    - `setBorderColors(_:)`
 
 ## Installation
 
-### Carthage
+#### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
 
@@ -42,7 +62,7 @@ To integrate Buttton into your Xcode project using Carthage, specify it in your 
 github "delba/Buttton"
 ```
 
-### CocoaPods
+#### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
