@@ -1,7 +1,7 @@
 //
-//  Buttton.h
+// Buttton.h
 //
-// Copyright (c) 2015 Damien (http://delba.io)
+// Copyright (c) 2015-2016 Damien (http://delba.io)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,12 +24,5 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for Buttton.
 FOUNDATION_EXPORT double ButttonVersionNumber;
-
-//! Project version string for Buttton.
 FOUNDATION_EXPORT const unsigned char ButttonVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <Buttton/PublicHeader.h>
-
-
